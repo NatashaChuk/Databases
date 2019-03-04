@@ -1,0 +1,118 @@
+Exercises
+Create a new repository on GitHub to hold your assignments for the Databases module. Create a new branch for Checkpoint 1. Submit your answers.
+
+1.	What data types do each of these values represent?
+
+		A:	"A Clockwork Orange" - string
+			42 - integer
+			09/02/1945 - date	
+			98.7 - float
+			$15.99 - numeric value
+
+
+2.	Explain when a database would be used. Explain when a text file would be used.
+
+		A:  When data needs to be update, manipulated or saved by one or more users, a database should be used. When the data is static, a text file should be used.
+
+
+3.	Describe one difference between SQL and other programming languages.
+		
+		A: SQL is a declarative language rather than a procedural one, meaning we only tell it what we're looking for versus how to look for it.
+
+
+4.	In your own words, explain how the pieces of a database system fit together at a high level.
+		
+		A: A database system is similar to a spreadsheet. There are rows and columns of data that can be searched via an algorithm.
+
+5.	Explain the meaning of table, row, column, and value.
+		
+		A:	Table - a set of columns and rows containing data - format for displaying data
+		   	Row - individual pieces of data that make up a complete conceptual unit
+			Column - defines what the data represents
+			Value - a piece of information that the column name describes
+
+6.	List three data types that can be used in a table.
+		
+		A:  string, interger, and date
+
+7.	Given this payments table, provide an English description of the following queries and include their results:
+		
+    			 SELECT date, amount
+     			 FROM payments;
+
+			 SELECT amount
+    			 FROM payments
+   			 WHERE amount > 500;
+
+     			 SELECT *
+     			 FROM payments
+    			 WHERE payee = 'Mega Foods';
+
+		
+		A: 	 I want to see all payment dates and amounts: 
+                                 
+				 PAYMENTS
+
+			     DATE          AMOUNT
+			2016-05-01	   1500.00	
+			2016-05-10	     37.00
+			2016-05-15	    124.93
+			2016-05-23	     54.72
+
+			-------------------------------------------------------------------
+
+			I want to see payment amounts under $500:
+
+					PAYMENTS
+					
+					AMOUNT
+					37.00
+					124.93
+					54.72
+			-----------------------------------------------------------------
+
+			I want to see all payment information from Mega Foods:
+
+					PAYMENTS
+
+			DATE		PAYEE		AMOUNT		MEMO
+		  	05/15/2016	Mega Foods	124.93		Groceries
+
+
+
+8.	Given this users table, write SQL queries using the following criteria and include the output:
+
+				
+	A:	The email and sign-up date for the user named DeAndre Data.
+
+		SELECT email, signup
+		FROM users
+		WHERE name = 'DeAndre Data';
+
+				USERS
+
+		    EMAIL			SIGNUP 
+		datad@comcast.net	      01/20/2008
+
+		-------------------------------------------------------------------------
+		The user ID for the user with email 'aleesia.algorithm@uw.edu'.
+
+		SELECT userid
+		FROM users
+		WHERE email = 'aleesia.algorithm@uw.edu';
+
+			USERS
+		
+			USER ID
+			1
+		-------------------------------------------------------------------------
+		All the columns for the user ID equal to 4.
+		
+		SELECT *
+		FROM users
+		WHERE userid = 4;
+
+					USERS
+
+		USER ID		NAME		EMAIL			`SIGN UP
+		   4		Brandy Boolean	bboolean@nasa.gov	10/15/1999
